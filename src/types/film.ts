@@ -1,4 +1,11 @@
-type Movie = {
+export type TypeMovieResponse = {
+  page: number;
+  result: Movie[];
+  total_pages: number;
+  total_results: number;
+};
+
+export type Movie = {
   id: string;
   title: string;
   releaseYear?: string;
@@ -7,7 +14,7 @@ type Movie = {
   description: string;
 };
 
-type MovieApiResponse = {
+export type MovieApiResponse = {
   searchQuery: string;
   page: number;
   maxItems: number;
@@ -21,12 +28,12 @@ export type HeaderProps = {
   onButtonClick: () => void;
 };
 
-type MovieCardProps = {
+export type MovieCardProps = {
   movie: Movie;
   onDetailsClick: (movieId: string) => void;
 };
 
-type MovieListProps = {
+export type MovieListProps = {
   query: string;
   page: number;
   maxItems: number;
@@ -38,37 +45,37 @@ export type ApiStatus = "idle" | "loading" | "success" | "error";
 
 export type NavigationTab = "home" | "elenco";
 
-type BelongsToCollection = {
+export type BelongsToCollection = {
   id: number;
   name: string;
   poster_path: string;
   backdrop_path: string;
 };
 
-type Genre = {
+export type Genre = {
   id: number;
   name: string;
 };
 
-type ProductionCompany = {
+export type ProductionCompany = {
   id: number;
   logo_path: string | null;
   name: string;
   origin_country: string;
 };
 
-type ProductionCountry = {
+export type ProductionCountry = {
   iso_3166_1: string;
   name: string;
 };
 
-type SpokenLanguage = {
+export type SpokenLanguage = {
   english_name: string;
   iso_639_1: string;
   name: string;
 };
 
-type MovieDetail = {
+export type MovieDetail = {
   adult: boolean;
   backdrop_path: string | null;
   belongs_to_collection: BelongsToCollection | null;

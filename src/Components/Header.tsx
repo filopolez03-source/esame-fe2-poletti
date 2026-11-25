@@ -1,26 +1,11 @@
-type HeaderProps = {
-  logoText: string;
-  buttonLabel: string;
-  onButtonClick: () => void;
-};
-
-const Header = ({ logoText, buttonLabel, onButtonClick }: HeaderProps) => {
+const Header = () => {
   return (
-    <header className="header">
-      <div className="header__brand">{logoText}</div>
-      <nav className="header__nav">
-        <a
-          href="#button"
-          onClick={(e) => {
-            e.preventDefault();
-            onButtonClick();
-          }}
-        >
-          {buttonLabel}
-        </a>
-      </nav>
-    </header>
+    <div className="header">
+      <h1 className="header_brand">MovieApp</h1>
+      <a className="header__nav" href="/">
+        Home/Elenco
+      </a>
+    </div>
   );
 };
-
 export default Header;

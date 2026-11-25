@@ -1,16 +1,21 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import Header from "./Components/Header";
+import { BrowserRouter, Routes, Route } from "react-router";
+import Shell from "./Components/Shell";
+import MovieList from "./Components/pages/MovieList";
+import MovieDetail from "./Components/pages/MovieDetail";
 import "./index.css";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <div>
-      <Header
-        logoText="MovieApp"
-        buttonLabel="Home/Elenco"
-        onButtonClick={() => console.log("Clicca")}
-      ></Header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        {/* Shell condivisa con le 2 rotte richieste */}
+        <Route path="/" element={<Shell />}>
+          <Route path="/" element={<MovieList />} />
+          <Route path="/movies/:id" element={<MovieDetail />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   </StrictMode>,
 );
