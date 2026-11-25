@@ -15,7 +15,7 @@ type MovieApiResponse = {
   results: Movie[];
 };
 
-type HeaderProps = {
+export type HeaderProps = {
   logoText: string;
   buttonLabel: string;
   onButtonClick: () => void;
