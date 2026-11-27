@@ -104,3 +104,18 @@ export type MovieDetail = {
   vote_average: number;
   vote_count: number;
 };
+
+export type Movies = {
+  id: number;
+  original_language: string;
+  original_title: string;
+  overview: string;
+  popularity: number;
+  poster_path: string;
+  release_date: string;
+  softcore: boolean;
+  title: string;
+  video: boolean;
+  vote_average: number;
+  vote_count: number;
+};
